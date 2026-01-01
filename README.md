@@ -1,9 +1,9 @@
-# GENTLE
-
 [![npm version](https://img.shields.io/npm/v/gentle-mcp.svg)](https://www.npmjs.com/package/gentle-mcp)
 [![npm downloads](https://img.shields.io/npm/dm/gentle-mcp.svg)](https://www.npmjs.com/package/gentle-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-24%2B-green.svg)](https://nodejs.org/)
+
+# GENTLE MCP
 
 **G**ame **E**ngine **N**avigation **T**ool for **L**earning & **E**xploration
 
