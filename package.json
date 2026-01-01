@@ -1,0 +1,60 @@
+{
+  "name": "gentle-mcp",
+  "version": "0.1.0",
+  "description": "GENTLE - Game Engine Navigation Tool for Learning & Exploration. MCP server for Unreal Engine and PyQt6 documentation.",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "bin": {
+    "gentle-mcp": "dist/src/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/src/index.js",
+    "fetch": "tsx scripts/fetch-sources.ts",
+    "parse": "tsx scripts/parse-all.ts",
+    "embed": "tsx scripts/embed-all.ts",
+    "setup": "npm run fetch && npm run parse && npm run embed",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "@xenova/transformers": "latest",
+    "@lancedb/lancedb": "latest",
+    "apache-arrow": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "eslint": "latest",
+    "@eslint/js": "latest",
+    "typescript-eslint": "latest",
+    "eslint-plugin-security": "latest",
+    "eslint-plugin-unicorn": "latest",
+    "eslint-plugin-sonarjs": "latest",
+    "eslint-plugin-promise": "latest",
+    "eslint-plugin-no-secrets": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "keywords": [
+    "mcp",
+    "unreal",
+    "unreal-engine",
+    "pyqt6",
+    "gamedev",
+    "documentation",
+    "ai",
+    "vector-search",
+    "gentle"
+  ],
+  "license": "MIT"
+}

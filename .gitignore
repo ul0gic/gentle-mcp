@@ -1,0 +1,26 @@
+node_modules/
+dist/
+
+# Generated data (built from sources)
+data/chunks.json
+data/lancedb/
+
+# Source files (fetched/copied during setup)
+sources/unreal-python/
+sources/unreal-console/
+sources/ollama/
+sources/llamaindex/
+sources/pyqt/
+sources/mcp/
+sources/unity/
+sources/pyqt-reference/
+sources/pyqt-tutorials/
+
+# Private folders
+.claude/
+.project/
+
+# Temp files
+.temp-*/
+*.log
+.DS_Store
