@@ -7,6 +7,7 @@ An MCP server providing instant semantic search across game development document
 ## Overview
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e40af', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#3b82f6', 'lineColor': '#3b82f6', 'secondaryColor': '#1e3a5f', 'tertiaryColor': '#0f172a', 'background': '#000000', 'subGraphLabelBgColor': '#1e40af', 'clusterBkg': '#0a0a0a', 'clusterBorder': '#3b82f6'}}}%%
 graph LR
     subgraph "Your AI Assistant"
         LLM[Claude / GPT / etc]
@@ -106,6 +107,7 @@ Once configured, ask your AI assistant questions like:
 ### Search Flow
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e40af', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#3b82f6', 'lineColor': '#3b82f6', 'actorBkg': '#1e40af', 'actorTextColor': '#ffffff', 'actorBorder': '#3b82f6', 'signalColor': '#3b82f6', 'signalTextColor': '#ffffff', 'background': '#000000', 'sequenceNumberColor': '#ffffff'}}}%%
 sequenceDiagram
     participant User
     participant LLM as AI Assistant
@@ -126,6 +128,7 @@ sequenceDiagram
 ### Data Pipeline
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1e40af', 'primaryTextColor': '#ffffff', 'primaryBorderColor': '#3b82f6', 'lineColor': '#3b82f6', 'secondaryColor': '#1e3a5f', 'tertiaryColor': '#0f172a', 'background': '#000000', 'subGraphLabelBgColor': '#1e40af', 'clusterBkg': '#0a0a0a', 'clusterBorder': '#3b82f6'}}}%%
 flowchart TD
     subgraph Sources
         UP[Unreal Python API<br/>unreal.py]

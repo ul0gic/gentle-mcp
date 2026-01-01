@@ -3,7 +3,6 @@ dist/
 
 # Generated data (built from sources)
 data/chunks.json
-data/lancedb/
 
 # Source files (fetched/copied during setup)
 sources/unreal-python/
