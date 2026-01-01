@@ -1,6 +1,13 @@
 # GENTLE
 
+[![npm version](https://img.shields.io/npm/v/gentle-mcp.svg)](https://www.npmjs.com/package/gentle-mcp)
+[![npm downloads](https://img.shields.io/npm/dm/gentle-mcp.svg)](https://www.npmjs.com/package/gentle-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-24%2B-green.svg)](https://nodejs.org/)
+
 **G**ame **E**ngine **N**avigation **T**ool for **L**earning & **E**xploration
+
+*Dedicated to GameMaker[GentleOnes]*
 
 An MCP server providing instant semantic search across game development documentation. No more copy-pasting docs into your LLM - GENTLE gives your AI assistant direct access to Unreal Engine and PyQt6 documentation.
 
@@ -55,9 +62,14 @@ graph LR
 
 ## Installation
 
+No build steps required - embeddings are pre-built and included in the package.
+
 ### Claude Desktop
 
-Add to `~/.config/Claude/claude_desktop_config.json`:
+Add to your config file:
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -70,9 +82,9 @@ Add to `~/.config/Claude/claude_desktop_config.json`:
 }
 ```
 
-### Cursor / Cline / Other MCP Clients
+### Cursor
 
-Add to your MCP configuration:
+Add to `.cursor/mcp.json` in your project root (or global settings):
 
 ```json
 {
@@ -85,11 +97,63 @@ Add to your MCP configuration:
 }
 ```
 
-### Global Installation
+### Cline (VS Code Extension)
+
+Open VS Code Settings → Cline → MCP Servers, then add:
+
+```json
+{
+  "gentle": {
+    "command": "npx",
+    "args": ["gentle-mcp"]
+  }
+}
+```
+
+### Windsurf
+
+Add to `~/.windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "gentle": {
+      "command": "npx",
+      "args": ["gentle-mcp"]
+    }
+  }
+}
+```
+
+### Claude Code (CLI)
+
+Add to `~/.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "gentle": {
+      "command": "npx",
+      "args": ["gentle-mcp"]
+    }
+  }
+}
+```
+
+### Global Installation (Optional)
+
+If you prefer a global install instead of `npx`:
 
 ```bash
 npm install -g gentle-mcp
 ```
+
+Then use `"command": "gentle-mcp"` with no args in your config.
+
+## Requirements
+
+- Node.js 24+
+- ~150MB disk space (embeddings + vector database)
 
 ## Usage Examples
 
@@ -189,7 +253,7 @@ interface DocChunk {
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/gentle-mcp
+git clone https://github.com/ul0gic/gentle-mcp
 cd gentle-mcp
 npm install
 ```
@@ -230,21 +294,6 @@ gentle-mcp/
 │   └── lancedb/          # Vector database
 └── dist/                 # Compiled output
 ```
-
-## Requirements
-
-- Node.js 24+
-- ~100MB disk space (embeddings + vector database)
-
-## How It Works
-
-1. **Parsing**: Documentation files are parsed into semantic chunks (classes, methods, etc.)
-2. **Embedding**: Each chunk is embedded using MiniLM-L6-v2 (local, ~30MB model)
-3. **Storage**: Embeddings + metadata stored in LanceDB (local, columnar, fast)
-4. **Search**: User queries are embedded and matched via cosine similarity
-5. **Response**: Top-K most relevant chunks returned to the LLM
-
-Everything runs locally. No external API calls at runtime.
 
 ## License
 

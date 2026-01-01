@@ -7,6 +7,10 @@
   "bin": {
     "gentle-mcp": "dist/src/index.js"
   },
+  "files": [
+    "dist/src",
+    "data/lancedb"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
